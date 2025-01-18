@@ -1,0 +1,45 @@
+def calculator():
+    print("===== Simple Calculator =====")
+    print("Operations:")
+    print("1. Addition (+)")
+    print("2. Subtraction (-)")
+    print("3. Multiplication (*)")
+    print("4. Division (/)")
+
+    # Predefined inputs for sandboxed environments
+    predefined_inputs = [10, 5, '1']  # Example: num1=10, num2=5, choice='1'
+    
+    try:
+        # Take input from the predefined list
+        num1 = float(predefined_inputs[0])
+        num2 = float(predefined_inputs[1])
+        choice = predefined_inputs[2].strip()
+
+        print(f"First number: {num1}")
+        print(f"Second number: {num2}")
+        print(f"Operation choice: {choice}")
+
+        # Perform the operation based on the choice
+        if choice == '1':
+            result = num1 + num2
+            print(f"The result of {num1} + {num2} is {result}")
+        elif choice == '2':
+            result = num1 - num2
+            print(f"The result of {num1} - {num2} is {result}")
+        elif choice == '3':
+            result = num1 * num2
+            print(f"The result of {num1} * {num2} is {result}")
+        elif choice == '4':
+            if num2 != 0:
+                result = num1 / num2
+                print(f"The result of {num1} / {num2} is {result}")
+            else:
+                print("Error: Division by zero is not allowed.")
+        else:
+            print("Invalid choice. Please select a valid operation.")
+    except ValueError:
+        print("Error: Invalid input. Please enter numeric values.")
+
+if __name__ == "__main__":
+    calculator()
+
